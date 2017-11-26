@@ -1,10 +1,10 @@
 #!/bin/bash
+shopt -s extglob;
 if git diff-index --quiet HEAD --; then # Check to make sure there are no uncommited changes
     set -o errexit; # Exit on error
     npm run clean;
     npm run build;
     git checkout -B gh-pages;
-    shopt -s extglob;
     rm -rf !(build|dist);
     mv build/* ./;
     rm -rf build;
