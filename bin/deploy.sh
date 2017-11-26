@@ -10,7 +10,7 @@ if git diff-index --quiet HEAD --; then # Check to make sure there are no uncomm
     rm -rf build;
     git add .;
     git commit -m "Create new production build";
-    git push origin gh-pages;
+    git push -f origin gh-pages;
     git checkout master;
     yarn install;
 else
