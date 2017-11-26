@@ -3,8 +3,16 @@ if git diff-index --quiet HEAD --; then # Check to make sure there are no uncomm
     set -o errexit; # Exit on error
     npm run clean;
     npm run build;
-    git checkout -b gh-pages;
-    find [path] -type -not -name 'dist' -not -name '.git' -delete
+    git checkout -B gh-pages;
+    shopt -s extglob;
+    rm -rf !(build|dist);
+    mv build/* ./;
+    rm -rf build;
+    git add .;
+    git commit -m "Create new production build";
+    git push origin gh-pages;
+    git checkout master;
+    yarn install;
 else
   echo Please commit or stash your changes first.;
 fi
