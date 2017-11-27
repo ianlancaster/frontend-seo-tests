@@ -1,9 +1,9 @@
 #!/bin/bash
 shopt -s extglob;
-# if git diff-index --quiet HEAD --; then # Check to make sure there are no uncommited changes
+if git diff-index --quiet HEAD --; then # Check to make sure there are no uncommited changes
     set -o errexit; # Exit on error
-    git add .;
-    git commit -m "Fast push";
+    # git add .;
+    # git commit -m "Fast push";
     npm run clean;
     npm run build;
     git checkout -B gh-pages;
@@ -15,6 +15,6 @@ shopt -s extglob;
     git push -f origin gh-pages;
     git checkout master;
     yarn install;
-# else
-  # echo Please commit or stash your changes first.;
-# fi
+else
+  echo Please commit or stash your changes first.;
+fi
