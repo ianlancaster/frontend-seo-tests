@@ -12,6 +12,7 @@ class App extends Component {
   
   componentDidMount() {
     let { timerSpeed } = this.props.match.params
+    console.log('timerSpeed : asdf : ', timerSpeed)
     timerSpeed = timerSpeed ? timerSpeed : 100
     timerSpeed = parseInt(timerSpeed, 10)
     debugger;
