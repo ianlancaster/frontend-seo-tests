@@ -14,6 +14,7 @@ class App extends Component {
     let { timerSpeed } = this.props.match.params
     timerSpeed = timerSpeed ? timerSpeed : 100
     timerSpeed = parseInt(timerSpeed, 10)
+    debugger;
     setInterval(() => {
       this.setState({
         timer: this.state.timer + timerSpeed,
