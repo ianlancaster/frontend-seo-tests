@@ -15,7 +15,6 @@ class App extends Component {
     console.log('timerSpeed : asdf : ', timerSpeed)
     timerSpeed = timerSpeed ? timerSpeed : 100
     timerSpeed = parseInt(timerSpeed, 10)
-    debugger;
     setInterval(() => {
       this.setState({
         timer: this.state.timer + timerSpeed,
@@ -32,7 +31,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p>0 Second Render</p>
+        <p>0 Second Render | version 1.2</p>
         {renderAfter(2) && <p>2 Second Render</p>}
         {renderAfter(4) && <p>4 Second Render</p>}
         {renderAfter(5) && <p>5 Second Render</p>}

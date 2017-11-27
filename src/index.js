@@ -8,12 +8,13 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+const root = process.env.REACT_APP_ROOT
 
 ReactDOM.render((
   <Router>
     <div>
-      <Route exact path='/' component={App} />
-      <Route path='/:timerSpeed' component={App} />
+      <Route exact path={root} component={App} />
+      <Route path={ root + ':timerSpeed' } component={App} />
     </div>
   </Router>
 ), document.getElementById('root'));
