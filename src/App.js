@@ -12,8 +12,8 @@ class App extends Component {
   
   componentDidMount() {
     setInterval(() => {
-      this.setState({ timer: this.state.timer + 1000 })
-    }, 1000)
+      this.setState({ timer: this.state.timer + 10 })
+    }, 10)
   }
 
   render() {
@@ -29,8 +29,7 @@ class App extends Component {
         {renderAfter(2) && <p>2 Second Render</p>}
         {renderAfter(4) && <p>4 Second Render</p>}
         {renderAfter(5) && <p>5 Second Render</p>}
-        {renderAfter(6) && <p>6 Second Render</p>}
-        {renderAfter(7) && <p>7 Second Render</p>}
+        {this.state.timer}
       </div>
     );
   }
