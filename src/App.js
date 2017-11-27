@@ -26,16 +26,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p>0 Second Render</p>
-        {renderAfter(1) && <p>1 Second Render</p>}
         {renderAfter(2) && <p>2 Second Render</p>}
-        {renderAfter(3) && <p>3 Second Render</p>}
         {renderAfter(4) && <p>4 Second Render</p>}
         {renderAfter(5) && <p>5 Second Render</p>}
         {renderAfter(6) && <p>6 Second Render</p>}
         {renderAfter(7) && <p>7 Second Render</p>}
-        {renderAfter(8) && <p>8 Second Render</p>}
-        {renderAfter(9) && <p>9 Second Render</p>}
-        {renderAfter(10) && <p>10 Second Render</p>}
       </div>
     );
   }
